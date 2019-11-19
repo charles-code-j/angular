@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">Lista de Filmes</div>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">DataLancamento</th>
+            <th scope="col">PrecoBilhete</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Classificacao</th>
+
+          </tr>
+          </thead>
+          <tbody>
+                  <ng-container *ngFor=" let filme of filmeList;">
+                    <th scope="row">{{filme.id}}</th>
+                    <td>{{(filme?.titulo)}}</td>
+                    <td>{{(filme?.dataLancamento | date: 'dd/MM/yyyy')}}</td>
+                    <td>{{(filme?.precoBilhete | currency: 'BRL')}}</td>
+                    <td>{{(filme?.genero)}}</td>
+                    <td>{{(filme?.classificacao)}}</td>
+
+                  </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
