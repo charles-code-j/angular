@@ -22,7 +22,16 @@ export class FilmeListComponent implements OnInit {
     filme.dataLancamento = new Date();
     filme.precoBilhete = 2;
     filme.classificacao = ClassificacaoEnum.ADULTO
+
+    const filme2 = new Filme();
+    filme2.id = 2;
+    filme2.titulo = 'NHA';
+    filme2.genero = 'Sei la'
+    filme2.dataLancamento = new Date();
+    filme2.precoBilhete = 6;
+    filme2.classificacao = ClassificacaoEnum.ADOLECENTE
     this.filmeService.add(filme);
+    this.filmeService.add(filme2);
     // console.log(this.filmeService.findAll());
     this.filmeList = this.filmeService.findAll();
   }
