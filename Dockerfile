@@ -9,6 +9,6 @@ COPY . .
 ENTRYPOINT ng serve
 
 FROM nginx:alpine
-VOLUME /var/cache/nginx
-COPY --from=angular /usr/share/nginx/html
-COPY .config/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+WORKDIR /usr/share/nginx/html
+COPY dist/ .
