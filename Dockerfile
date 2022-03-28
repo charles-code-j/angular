@@ -9,4 +9,4 @@ COPY . .
 ENTRYPOINT ng serve
 
 FROM nginx:alpine
-COPY --from=angular /opc/projeto/angular /usr/share/nginx/html
+COPY --from=angular /usr/share/nginx/html
