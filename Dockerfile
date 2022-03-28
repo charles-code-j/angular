@@ -5,8 +5,8 @@ RUN apt-get update && apt-get install nodejs -y
 RUN apt-get install npm -y
 RUN npm install -force
 RUN npm i -g @angular/cli
-COPY . . 
+COPY . .
 ENTRYPOINT ng serve
 
 FROM nginx:alpine
-COPY --from=angular /usr/share/nginx/html
+COPY --from=angular . /usr/share/nginx/html
