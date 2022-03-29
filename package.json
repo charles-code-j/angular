@@ -3,13 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-<<<<<<< HEAD
     "start": "ng serve",
     "build": "ng build --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build",
-=======
-    "start": "ng serve --host 0.0.0.0",
-    "build": "ng build",
->>>>>>> 82aab7438d89bc1479cac07aa0dc6a82e7196a1b
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
