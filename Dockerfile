@@ -6,8 +6,7 @@ RUN apt-get install npm -y
 RUN npm install -force
 RUN npm i -g @angular/cli
 COPY . .
+EXPOSE 4200
 ENTRYPOINT ng serve
 
-FROM nginx:alpine
-COPY --from=angular /home/charlesmar/projeto/angular /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+
