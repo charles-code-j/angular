@@ -1,12 +1,10 @@
 FROM node:16.14.2 as angular
-WORKDIR /home/charlesmar/projeto/angular
-COPY package.json .
-RUN apt-get update && apt-get install nodejs -y
-RUN apt-get install npm -y
-RUN npm install -force
-RUN npm i -g @angular/cli
-COPY . . 
-ENTRYPOINT ng serve
+RUN mkdir -p /app
+WORKDIR /app
+COPY package.json /app/
+RUN npm install --force
+COPY . /app/ 
+RUN npm run build --prod
 
 FROM nginx:alpine
-COPY --from=angular /usr/share/nginx/html
+COPY --from=angular /app/dist/angular /usr/share/nginx/html
